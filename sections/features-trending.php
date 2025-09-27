@@ -1,3 +1,6 @@
+ test
+
+ main
 <div class="features">
   ...
 </div>
@@ -28,4 +31,8 @@
       <?php endforeach; ?>
     </div>
   </div>
+ test
 </div>
+
+</div>
+ main

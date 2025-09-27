@@ -1,3 +1,4 @@
+ test
 <?php
 include_once 'data.php';
 $search_results = [];
@@ -10,6 +11,8 @@ if (isset($_GET['searchKeyword']) && trim($_GET['searchKeyword']) !== '') {
     }
 }
 ?>
+
+ main
 <div class="main-banner">
   <div class="container">
     <div class="row">
@@ -19,9 +22,15 @@ if (isset($_GET['searchKeyword']) && trim($_GET['searchKeyword']) !== '') {
           <h2>BEST GAMING SITE EVER!</h2>
           <p>LUGX Gaming is free Bootstrap 5 HTML CSS website template...</p>
           <div class="search-input">
+ test
             <form id="search" action="" method="get">
               <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" value="<?= isset($_GET['searchKeyword']) ? htmlspecialchars($_GET['searchKeyword']) : '' ?>"/>
               <button role="button" type="submit">Search Now</button>
+
+            <form id="search" action="#">
+              <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"/>
+              <button role="button">Search Now</button>
+ main
             </form>
           </div>
         </div>
@@ -34,6 +43,7 @@ if (isset($_GET['searchKeyword']) && trim($_GET['searchKeyword']) !== '') {
         </div>
       </div>
     </div>
+ test
     <?php if (isset($_GET['searchKeyword'])): ?>
       <div class="row mt-4">
         <div class="col-12">
@@ -70,3 +80,7 @@ if (isset($_GET['searchKeyword']) && trim($_GET['searchKeyword']) !== '') {
     <?php endif; ?>
   </div>
 </div>
+
+  </div>
+</div>
+ main

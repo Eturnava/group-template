@@ -10,4 +10,8 @@ include 'sections/most-played.php';
 include 'sections/categories.php';
 include 'sections/cta.php';
 
+ test
 render_footer(); ?>
+=======
+render_footer(); ?>
+ main
