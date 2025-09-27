@@ -1,3 +1,18 @@
+ test
+<?php
+include_once 'data.php';
+$search_results = [];
+if (isset($_GET['searchKeyword']) && trim($_GET['searchKeyword']) !== '') {
+    $keyword = strtolower(trim($_GET['searchKeyword']));
+    foreach ($products as $product) {
+        if (strpos(strtolower($product['name']), $keyword) !== false) {
+            $search_results[] = $product;
+        }
+    }
+}
+?>
+
+ main
 <div class="main-banner">
   <div class="container">
     <div class="row">
@@ -7,9 +22,15 @@
           <h2>BEST GAMING SITE EVER!</h2>
           <p>LUGX Gaming is free Bootstrap 5 HTML CSS website template...</p>
           <div class="search-input">
+ test
+            <form id="search" action="" method="get">
+              <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" value="<?= isset($_GET['searchKeyword']) ? htmlspecialchars($_GET['searchKeyword']) : '' ?>"/>
+              <button role="button" type="submit">Search Now</button>
+
             <form id="search" action="#">
               <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword"/>
               <button role="button">Search Now</button>
+ main
             </form>
           </div>
         </div>
@@ -22,5 +43,44 @@
         </div>
       </div>
     </div>
+ test
+    <?php if (isset($_GET['searchKeyword'])): ?>
+      <div class="row mt-4">
+        <div class="col-12">
+          <?php if (empty($search_results)): ?>
+            <div class="alert alert-warning">No products found for "<?= htmlspecialchars($_GET['searchKeyword']) ?>".</div>
+          <?php else: ?>
+            <h5>Search Results:</h5>
+            <div class="row">
+              <?php foreach ($search_results as $product): ?>
+                <div class="col-md-4 mb-3">
+                  <div class="card">
+                    <img src="<?= htmlspecialchars($product['image']) ?>" class="card-img-top" alt="<?= htmlspecialchars($product['name']) ?>">
+                    <div class="card-body">
+                      <h5 class="card-title"><?= htmlspecialchars($product['name']) ?></h5>
+                      <p class="card-text">
+                        <span class="badge bg-secondary"><?= htmlspecialchars($product['category']) ?></span>
+                        <br>
+                        <span class="text-muted">
+                          <?php if (!empty($product['old_price'])): ?>
+                            <em>$<?= htmlspecialchars($product['old_price']) ?></em>
+                          <?php endif; ?>
+                          $<?= htmlspecialchars($product['price']) ?>
+                        </span>
+                      </p>
+                      <a href="product-details.php?id=<?= $product['id'] ?>" class="btn btn-primary btn-sm">View Product</a>
+                    </div>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </div>
 </div>
+
+  </div>
+</div>
+ main

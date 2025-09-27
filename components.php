@@ -20,6 +20,14 @@ function render_head($title = "Lugx Gaming Shop") {
 }
 
 function render_header($active = "home") {
+    if (session_status() == PHP_SESSION_NONE) session_start();
+    $cart_count = 0;
+    if (!empty($_SESSION['cart'])) {
+        foreach ($_SESSION['cart'] as $item) {
+            $cart_count += $item['quantity'];
+        }
+    }
+    $username = isset($_SESSION['username']) ? $_SESSION['username'] : null;
 ?>
 <header class="header-area header-sticky">
   <div class="container">
@@ -34,7 +42,13 @@ function render_header($active = "home") {
             <li><a href="shop.php" class="<?= $active=='shop'?'active':'' ?>">Our Shop</a></li>
             <li><a href="product-details.php" class="<?= $active=='product'?'active':'' ?>">Product Details</a></li>
             <li><a href="contact.php" class="<?= $active=='contact'?'active':'' ?>">Contact Us</a></li>
-            <li><a href="#">Sign In</a></li>
+            <?php if ($username): ?>
+              <li><a href="#"><?= htmlspecialchars($username) ?></a></li>
+              <li><a href="signout.php">Sign Out</a></li>
+            <?php else: ?>
+              <li><a href="signin.php">Sign In</a></li>
+            <?php endif; ?>
+            <li><a href="cart.php">Cart (<?= $cart_count ?>)</a></li>
           </ul>
           <a class='menu-trigger'><span>Menu</span></a>
         </nav>

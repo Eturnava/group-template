@@ -1,9 +1,9 @@
 <?php
 $trending_games = [
-  ["title"=>"Assassin Creed", "category"=>"Action", "price_old"=>"28", "price"=>"20", "image"=>"assets/images/trending-01.jpg"],
-  ["title"=>"Assassin Creed", "category"=>"Action", "price"=>"44", "image"=>"assets/images/trending-02.jpg"],
-  ["title"=>"Assassin Creed", "category"=>"Action", "price_old"=>"32", "price"=>"27", "image"=>"assets/images/trending-03.jpg"],
-  ["title"=>"Assassin Creed", "category"=>"Action", "price"=>"36", "image"=>"assets/images/trending-04.jpg"],
+  ["title"=>"Warframe veilbreaker", "category"=>"Shooter", "price_old"=>"36", "price"=>"24", "image"=>"assets/images/trending-01.jpg"],
+  ["title"=>"Towers of fantasy", "category"=>"Strategy", "price_old"=>"32", "price"=>"22", "image"=>"assets/images/trending-02.jpg"],
+  ["title"=>"Super people", "category"=>"Strategy", "price_old"=>"45", "price"=>"30", "image"=>"assets/images/trending-03.jpg"],
+  ["title"=>"Dragons race", "category"=>"Racing", "price_old"=>"32", "price"=>"22", "image"=>"assets/images/trending-04.jpg"],
 ];
 
 $most_played = [
@@ -58,4 +58,70 @@ $cta = [
         "subtitle" => "Get Up To $100 Off Just Buy <em>Subscribe</em> Newsletter!",
         "buttonText" => "Subscribe Now"
     ]
+];
+
+
+$products = [
+  [
+    "id" => 1,
+    "name" => "Warframe Veilbreaker",
+    "category" => "Adventure",
+    "price" => 24,
+    "old_price" => 36,
+    "image" => "assets/images/trending-01.jpg"
+  ],
+  [
+    "id" => 2,
+    "name" => "Towers of fantasy",
+    "category" => "Strategy",
+    "price" => 22,
+    "old_price" => 32,
+    "image" => "assets/images/trending-02.jpg"
+  ],
+  [
+    "id" => 3,
+    "name" => "Super people",
+    "category" => "Strategy",
+    "price" => 30,
+    "old_price" => 45,
+    "image" => "assets/images/trending-03.jpg"
+  ],
+  [
+    "id" => 4,
+    "name" => "Dragons race",
+    "category" => "Racing",
+    "price" => 22,
+    "old_price" => 32,
+    "image" => "assets/images/trending-04.jpg"
+  ],
+  [
+    "id" => 5,
+    "name" => "Lost Ark",
+    "category" => "Adventure",
+    "price" => 28,
+    "old_price" => 38,
+    "image" => "assets/images/top-game-05.jpg"
+  ],
+  [
+    "id" => 6,
+    "name" => "Apex Legends",
+    "category" => "Shooter",
+    "price" => 26,
+    "old_price" => 36,
+    "image" => "assets/images/top-game-03.jpg"
+  ],
+  [
+    "id" => 7,
+    "name" => "Call of Duty MW II",
+    "category" => "Shooter",
+    "price" => 69,
+    "image" => "assets/images/single-game.jpg"
+  ],
+  [
+    "id" => 8,
+    "name" => "PUBG New State",
+    "category" => "Shooter",
+    "price" => 10,
+    "image" => "assets/images/top-game-02.jpg"
+  ]
 ];
