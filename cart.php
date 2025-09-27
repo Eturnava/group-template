@@ -11,9 +11,9 @@ $show_checkout = isset($_POST['checkout']);
 $payment_success = false;
 
 if (isset($_POST['pay_now'])) {
-    // Simulate payment success
+  
     $payment_success = true;
-    // Optionally clear cart
+  
     $_SESSION['cart'] = [];
 }
 ?>
